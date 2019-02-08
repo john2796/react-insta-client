@@ -8,7 +8,7 @@ import {
 } from "./types";
 
 // http://localhost:5000
-const URL = "/api/insta/";
+const URL = " https://insta-clone-server.herokuapp.com/api/insta/";
 export const getInstaComments = () => dispatch => {
   axios
     .get(URL)
