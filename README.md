@@ -1,3 +1,6 @@
+
+here's the repo with commits had the make a new repo to separate deployment process for server and client https://github.com/john2796/React-Insta-Clone-1
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
