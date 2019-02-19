@@ -134,7 +134,6 @@ class Register extends Component {
 
   render() {
     const { errors } = this.state;
-    console.log(this.props.loading);
     return (
       <RegisterStyle>
         {this.props.loading && (
