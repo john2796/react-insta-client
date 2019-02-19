@@ -5,6 +5,7 @@ import { registerUser } from "../store/action/authAction";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import { Spinner } from "reactstrap";
 
 import { FormGroup, Input, Button, Tooltip } from "reactstrap";
 
@@ -133,8 +134,19 @@ class Register extends Component {
 
   render() {
     const { errors } = this.state;
+    console.log(this.props.loading);
     return (
       <RegisterStyle>
+        {this.props.loading && (
+          <Spinner
+            style={{
+              margin: "10px auto",
+              display: "flex",
+              justifyContent: "center"
+            }}
+            color="primary"
+          />
+        )}
         <div className="login_fb">
           <Button
             className="signup_btn"
@@ -254,6 +266,7 @@ Register.propTypes = {
 };
 const mapStateToProps = state => ({
   auth: state.auth,
+  loading: state.auth.loading,
   errors: state.errors
 });
 export default connect(

@@ -6,6 +6,7 @@ import classnames from "classnames";
 import { loginUser, setCurrentUser } from "../store/action/authAction";
 import styled from "styled-components";
 import { FormGroup, Input, Button } from "reactstrap";
+import { Spinner } from "reactstrap";
 
 import mainPhone from "../assets/mainphone.png";
 import phone1 from "../assets/phone1.jpg";
@@ -283,6 +284,16 @@ class Login extends Component {
               onSubmit={this.onSubmit}
               style={{ maxWidth: "290px", margin: "0 auto" }}
             >
+              {this.props.loading && (
+                <Spinner
+                  style={{
+                    margin: "10px auto",
+                    display: "flex",
+                    justifyContent: "center"
+                  }}
+                  color="primary"
+                />
+              )}
               <FormGroup>
                 <Input
                   onChange={this.onChange}
@@ -377,6 +388,7 @@ Login.propTypes = {
 };
 const mapStateToProps = state => ({
   auth: state.auth,
+  loading: state.auth.loading,
   errors: state.errors
 });
 export default connect(

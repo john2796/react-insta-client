@@ -6,6 +6,7 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 // register user
 // http://localhost:5000/api/users/register
 export const registerUser = (userData, history) => dispatch => {
+  dispatch(setUserLoading());
   axios
     .post(
       " https://insta-clone-server.herokuapp.com/api/users/register",
@@ -22,6 +23,7 @@ export const registerUser = (userData, history) => dispatch => {
 // Login - get user token
 // http://localhost:5000/api/users/login
 export const loginUser = userData => dispatch => {
+  dispatch(setUserLoading());
   axios
     .post(" https://insta-clone-server.herokuapp.com/api/users/login", userData)
     .then(res => {
